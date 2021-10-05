@@ -11,14 +11,14 @@ class SecondPageIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(data.name ?? ''),
+        title: Text(data.name),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(data.location ?? ''),
+            Text(data.location),
             const SizedBox(height: 16),
             Text(_getDateRange()),
             if (data.link != null)

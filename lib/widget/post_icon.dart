@@ -5,8 +5,7 @@ import 'package:project/page/second_page.dart';
 import 'package:project/page/second_page_icon.dart';
 
 class PostIcon extends StatelessWidget {
-  const PostIcon({Key key}) : super(key: key);
-
+ Comment comment;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +15,9 @@ class PostIcon extends StatelessWidget {
       body: FutureBuilder<List<Comment>>(
         future: fetchList(),
         builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
           List<Comment> list = snapshot.data;
           return ListView.builder(
             itemCount: list.length,
@@ -28,7 +30,7 @@ class PostIcon extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context,Comment comment) => SecondPageIcon(data: comment)),
+                        builder: (context) => SecondPageIcon(data: comment)),
                   );
                 },
               );
