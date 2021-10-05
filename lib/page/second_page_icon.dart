@@ -23,23 +23,44 @@ class SecondPageIcon extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(data.location,
-                style: TextStyle(
-                  fontSize: 45
-                ),),
+                Text(
+                  data.location,
+                  style: TextStyle(fontSize: 45),
+                ),
                 const SizedBox(height: 16),
-                Text(_getDateRange()),
-                  TextButton(
-                    onPressed: _launchUrl,
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: const Text(
-                      'Go to official website',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                Text(_getDateRange(),
+                  style: TextStyle(
+                      fontSize: 18
+                  ),),
+                SizedBox(
+                  height: 45,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10 ,right: 10),
+                  child: Card(
+                    color: Colors.grey,
+                    shape:
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                    elevation: 5,
+                    child: Container(
+                      height: 42,
+                      width: 280,
+                      child: TextButton(
+                        onPressed: _launchUrl,
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: const Text(
+                          'Go to official website',
+                          style: TextStyle(
+                              fontSize: 26,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ),
+                ),
               ],
             ),
           ),
