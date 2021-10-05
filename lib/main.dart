@@ -12,10 +12,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Conference App',
       theme: ThemeData(
-        primarySwatch: Colors.brown,
+        brightness: Brightness.light,
+        /* light theme settings */
       ),
-      home: PostIcon(),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
+      home: PostIcon(),
     );
   }
 }
