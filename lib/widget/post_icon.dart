@@ -16,16 +16,8 @@ class PostIcon extends StatelessWidget {
       body: FutureBuilder<List<Comment>>(
         future: fetchList(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text(snapshot.error.toString()));
-          } else if (!snapshot.hasData) {
-            return const Center(child: Text('no data'));
-          }
-
           List<Comment> list = snapshot.data;
-          return ListView.separated(
+          return ListView.builder(
             itemCount: list.length,
             itemBuilder: (BuildContext context, int index) {
               Comment data = list[index];
@@ -33,24 +25,17 @@ class PostIcon extends StatelessWidget {
                 title: data.name,
                 body: data.location,
                 onTap: () {
-                  openDetailScreen(context, data);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context,Comment comment) => SecondPageIcon(data: comment)),
+                  );
                 },
               );
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return const Divider();
             },
           );
         },
       ),
-    );
-  }
-
-  void openDetailScreen(BuildContext context, Comment conference) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => SecondPageIcon(data: conference)),
     );
   }
 }

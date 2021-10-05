@@ -4,7 +4,7 @@ class SecondPage extends StatelessWidget {
   final String title;
   final String body;
   final void Function() onTap;
-  SecondPage({Key key, this.title, this.body, this.onTap});
+  SecondPage({this.title, this.body, this.onTap});
 
   @override
   Widget build(BuildContext context) {
