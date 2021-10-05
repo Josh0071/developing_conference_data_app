@@ -16,7 +16,7 @@ class PostIcon extends StatelessWidget {
           fontSize: 25,
         ),),
       ),
-      body: FutureBuilder<List<Comment>>(
+      body: FutureBuilder(
         future: fetchList(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
