@@ -23,7 +23,8 @@ class SecondPageIcon extends StatelessWidget {
             Text(_getDateRange()),
             if (data.link != null)
               TextButton(
-                onPressed: _launchUrl,
+                onPressed:
+                _launchUrl,
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
                 ),
@@ -47,10 +48,6 @@ class SecondPageIcon extends StatelessWidget {
   }
 
   void _launchUrl() async {
-    if (data.link == null) return;
-
-    await canLaunch(data.link)
-        ? await launch(data.link)
-        : throw Exception('Could not launch ${data.link}');
+    await canLaunch(data.link);
   }
 }

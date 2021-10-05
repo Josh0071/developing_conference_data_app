@@ -2,7 +2,7 @@ import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 import 'package:project/model/comment.dart';
 
-const String Url =
+  final String Url =
     'https://raw.githubusercontent.com/junsuk5/mock_json/main/conferences.json';
 
 Future<List<Comment>> fetchList() async {
