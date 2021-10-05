@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-gf
-=======
-
 import 'package:flutter/material.dart';
 import 'package:project/model/comment.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -57,4 +53,3 @@ class SecondPageIcon extends StatelessWidget {
         : throw Exception('Could not launch ${data.link}');
   }
 }
->>>>>>> 6edf885 (sixth commit)
