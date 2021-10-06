@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatelessWidget {
+class PostIconContents extends StatelessWidget {
   final title;
   final body;
   final Function() onTap;
 
-  SecondPage({this.title, this.body, this.onTap});
+  PostIconContents({this.title, this.body, this.onTap});
 
   @override
   Widget build(BuildContext context) {

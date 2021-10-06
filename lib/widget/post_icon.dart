@@ -27,7 +27,7 @@ class PostIcon extends StatelessWidget {
             itemCount: list.length,
             itemBuilder: (BuildContext context, int index) {
               Comment data = list[index];
-              return SecondPage(
+              return PostIconContents(
                 title: data.name,
                 body: data.location,
                 onTap: () {
