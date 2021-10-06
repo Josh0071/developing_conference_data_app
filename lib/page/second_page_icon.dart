@@ -25,7 +25,7 @@ class SecondPageIcon extends StatelessWidget {
               children: [
                 Text(
                   data.location,
-                  style: TextStyle(fontSize: 45),
+                  style: TextStyle(fontSize: 30),
                 ),
                 const SizedBox(height: 16),
                 Text(
