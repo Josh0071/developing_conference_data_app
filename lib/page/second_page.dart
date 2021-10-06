@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
-  final String title;
-  final String body;
-  final void Function() onTap;
+  final title;
+  final body;
+  final Function() onTap;
 
   SecondPage({this.title, this.body, this.onTap});
 
