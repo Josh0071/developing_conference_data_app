@@ -10,11 +10,13 @@ class PostIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Conferences',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 24,
-        ),),
+        title: const Text(
+          'Conferences',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+          ),
+        ),
       ),
       body: FutureBuilder(
         future: fetchList(),
@@ -31,7 +33,7 @@ class PostIcon extends StatelessWidget {
                 title: data.name,
                 body: data.location,
                 onTap: () {
-                 final Comment comment = data;
+                  final Comment comment = data;
                   Navigator.push(
                     context,
                     MaterialPageRoute(

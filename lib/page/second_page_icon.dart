@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 
 class SecondPageIcon extends StatelessWidget {
   final Comment data;
+
   SecondPageIcon({this.data});
 
   @override
@@ -27,19 +28,19 @@ class SecondPageIcon extends StatelessWidget {
                   style: TextStyle(fontSize: 45),
                 ),
                 const SizedBox(height: 16),
-                Text(_getDateRange(),
-                  style: TextStyle(
-                      fontSize: 18
-                  ),),
+                Text(
+                  _getDateRange(),
+                  style: TextStyle(fontSize: 18),
+                ),
                 SizedBox(
                   height: 45,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10 ,right: 10),
+                  padding: const EdgeInsets.only(left: 10, right: 10),
                   child: Card(
                     color: Colors.grey,
-                    shape:
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15)),
                     elevation: 5,
                     child: Container(
                       height: 42,

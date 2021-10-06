@@ -18,7 +18,7 @@ class PostIconContents extends StatelessWidget {
           child: Card(
             margin: const EdgeInsets.only(bottom: 10),
             shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
             elevation: 5,
             child: Container(
               height: 50,
@@ -26,14 +26,18 @@ class PostIconContents extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Column(
                   children: [
-                    SizedBox(height: 5,),
+                    SizedBox(
+                      height: 5,
+                    ),
                     Text(
-                      title, style: const TextStyle(fontWeight: FontWeight.bold,
-                    fontSize: 22),),
+                      title,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 22),
+                    ),
                     Text(body),
                   ],
                 ),
-                ),
+              ),
             ),
           ),
         ),
