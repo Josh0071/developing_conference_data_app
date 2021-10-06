@@ -35,8 +35,8 @@ class SecondPageIcon extends StatelessWidget {
                 SizedBox(
                   height: 45,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
+                InkWell(
+                  onTap: launchURL,
                   child: Card(
                     color: Colors.grey,
                     shape: RoundedRectangleBorder(
@@ -45,11 +45,7 @@ class SecondPageIcon extends StatelessWidget {
                     child: Container(
                       height: 42,
                       width: 280,
-                      child: TextButton(
-                        onPressed: _launchUrl,
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
+                      child: Center(
                         child: const Text(
                           'Go to official website',
                           style: TextStyle(
@@ -77,7 +73,12 @@ class SecondPageIcon extends StatelessWidget {
     return (startDate != endDate) ? '$startDate ~ $endDate' : startDate;
   }
 
-  void _launchUrl() async {
-    await canLaunch(data.link);
+  void launchURL() async {
+   final String url = data.link;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Error';
+    }
   }
 }
