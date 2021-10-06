@@ -13,7 +13,7 @@ class PostIcon extends StatelessWidget {
         title: const Text('Conferences',
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 25,
+          fontSize: 24,
         ),),
       ),
       body: FutureBuilder(

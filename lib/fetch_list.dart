@@ -12,7 +12,7 @@ Future<List<Comment>> fetchList() async {
   if (response.statusCode == 200) {
     Iterable jsonResponse = convert.jsonDecode(response.body);
     return jsonResponse
-        .map((conference) => Comment.fromJson(conference))
+        .map((comment) => Comment.fromJson(comment))
         .toList();
   }
 

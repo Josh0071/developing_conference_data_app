@@ -6,7 +6,6 @@ import 'package:intl/intl.dart';
 
 class SecondPageIcon extends StatelessWidget {
   final Comment data;
-
   SecondPageIcon({this.data});
 
   @override
