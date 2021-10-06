@@ -74,9 +74,8 @@ class SecondPageIcon extends StatelessWidget {
   }
 
   void launchURL() async {
-   final String url = data.link;
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunch(data.link)) {
+      await launch(data.link);
     } else {
       throw 'Error';
     }
