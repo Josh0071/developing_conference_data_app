@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PostIconContents extends StatelessWidget {
-  final title;
-  final body;
+  final String title;
+  final String body;
   final Function() onTap;
 
   PostIconContents({this.title, this.body, this.onTap});
