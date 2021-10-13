@@ -1,5 +1,6 @@
 class Comment {
-  Comment({String name,
+  Comment({
+    String name,
     String link,
     String start,
     String end,
@@ -19,11 +20,11 @@ class Comment {
     end = json['end'];
     location = json['location'];
   }
+
+
   String name;
   String link;
   String start;
   String end;
   String location;
-
-  }
-
+}
