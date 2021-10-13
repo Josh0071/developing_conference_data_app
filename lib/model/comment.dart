@@ -1,9 +1,9 @@
 class Comment {
-  Comment({String name,
-    String link,
-    String start,
-    String end,
-    String location,
+  Comment({String? name,
+    String? link,
+    String? start,
+    String? end,
+    String? location,
   }) {
     name = name;
     link = link;
@@ -19,11 +19,11 @@ class Comment {
     end = json['end'];
     location = json['location'];
   }
-  String name;
-  String link;
-  String start;
-  String end;
-  String location;
+  String? name;
+  String? link;
+  String? start;
+  String? end;
+  String? location;
 
   }
 

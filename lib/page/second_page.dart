@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PostIconContents extends StatelessWidget {
-  final String title;
-  final String body;
-  final Function() onTap;
+  final String? title;
+  final String? body;
+  final Function()? onTap;
 
   PostIconContents({this.title, this.body, this.onTap});
 
@@ -30,11 +30,11 @@ class PostIconContents extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      title,
+                      title!,
                       style: const TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 22),
                     ),
-                    Text(body),
+                    Text(body!),
                   ],
                 ),
               ),

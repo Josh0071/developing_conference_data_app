@@ -20,9 +20,17 @@ class PostIcon extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: fetchList(),
-        builder: (context, snapshot) {
+        initialData: [],
+        builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
+          }
+          if (snapshot.hasError) {
+            return Text('에러가 발생했습니다');
+          }
+
+          if (!snapshot.hasData) {
+            return Text('데이터가 없습니다');
           }
           List<Comment> list = snapshot.data;
           return ListView.builder(

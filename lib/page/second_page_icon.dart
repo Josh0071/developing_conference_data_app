@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:intl/intl.dart';
 
 class SecondPageIcon extends StatelessWidget {
-  final Comment data;
+  final Comment? data;
 
   SecondPageIcon({this.data});
 
@@ -13,7 +13,7 @@ class SecondPageIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(data.name),
+        title: Text(data!.name!),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -24,7 +24,7 @@ class SecondPageIcon extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  data.location,
+                  data!.location!,
                   style: TextStyle(fontSize: 30),
                 ),
                 const SizedBox(height: 16),
@@ -67,15 +67,15 @@ class SecondPageIcon extends StatelessWidget {
 
   String _getDateRange() {
     DateFormat dateFormat = DateFormat('yMMMd');
-    String startDate = dateFormat.format(DateTime.parse(data.start));
-    String endDate = dateFormat.format(DateTime.parse(data.end));
+    String startDate = dateFormat.format(DateTime.parse(data!.start!));
+    String endDate = dateFormat.format(DateTime.parse(data!.end!));
 
     return (startDate != endDate) ? '$startDate ~ $endDate' : startDate;
   }
 
   void launchURL() async {
-    if (await canLaunch(data.link)) {
-      await launch(data.link);
+    if (await canLaunch(data!.link!)) {
+      await launch(data!.link!);
     } else {
       throw 'Error';
     }
